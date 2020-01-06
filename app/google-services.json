@@ -1,69 +1,39 @@
 {
   "project_info": {
-    "project_number": "828359496091",
-    "firebase_url": "https://magic-cleaner-pro.firebaseio.com",
-    "project_id": "magic-cleaner-pro",
-    "storage_bucket": "magic-cleaner-pro.appspot.com"
+    "project_number": "37710964854",
+    "firebase_url": "https://cleaner-f387a.firebaseio.com",
+    "project_id": "cleaner-f387a",
+    "storage_bucket": "cleaner-f387a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:828359496091:android:b95320ae9a45ab6a0f913e",
+        "mobilesdk_app_id": "1:37710964854:android:8ab185210ca04ff4a71757",
         "android_client_info": {
-          "package_name": "app.magic.cleaner.boost"
+          "package_name": "cleaner.boost.wso.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
+          "client_id": "37710964854-n0vgqm1r01fjukjge799kf9fm71augst.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAYbARz0JGyRIiVOdHPUaO-1OVh9GCc5ZA"
+          "current_key": "AIzaSyBX4uQtz3hiGHy3XisXEpMSvc1y5bhOCGw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
+              "client_id": "37710964854-n0vgqm1r01fjukjge799kf9fm71augst.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:828359496091:android:bfa0dd3788b49b0d0f913e",
-        "android_client_info": {
-          "package_name": "pro.magic.cleaner.boost"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAYbARz0JGyRIiVOdHPUaO-1OVh9GCc5ZA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-9387354664905418~8926986229"
     }
   ],
   "configuration_version": "1"

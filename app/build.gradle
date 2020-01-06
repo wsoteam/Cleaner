@@ -11,7 +11,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "pro.magic.cleaner.boost"
+        applicationId "cleaner.boost.wso.app"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 29
