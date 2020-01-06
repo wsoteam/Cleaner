@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "828359496091",
+    "firebase_url": "https://magic-cleaner-pro.firebaseio.com",
+    "project_id": "magic-cleaner-pro",
+    "storage_bucket": "magic-cleaner-pro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828359496091:android:b95320ae9a45ab6a0f913e",
+        "android_client_info": {
+          "package_name": "app.magic.cleaner.boost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYbARz0JGyRIiVOdHPUaO-1OVh9GCc5ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828359496091:android:bfa0dd3788b49b0d0f913e",
+        "android_client_info": {
+          "package_name": "pro.magic.cleaner.boost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYbARz0JGyRIiVOdHPUaO-1OVh9GCc5ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828359496091-9ck0bo4n91774oc5t18kt7b9s4f1bln3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9387354664905418~8926986229"
+    }
+  ],
+  "configuration_version": "1"
+}
