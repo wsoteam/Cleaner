@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:background="#272A2D"
+            android:background="@color/btn_white"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
@@ -29,7 +29,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textAppearance="?android:textAppearanceLarge"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/main_color"
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
