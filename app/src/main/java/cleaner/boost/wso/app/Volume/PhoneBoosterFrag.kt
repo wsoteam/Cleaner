@@ -149,8 +149,6 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.phone_booster, container, false)
-        la_ai.setAnimation("main_ripple.json")
-        la_ai.playAnimation()
         return view
     }
 
@@ -158,6 +156,8 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        la_ai.playAnimation()
+
         data.observe(this, Observer {
             optbutton.setText(it)
         })

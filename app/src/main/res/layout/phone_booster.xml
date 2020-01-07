@@ -53,9 +53,11 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/la_ai"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             app:lottie_autoPlay="true"
+            custom:lottie_fileName="448-ripple-loading-animation.json"
+            custom:lottie_loop="true"
             app:lottie_loop="true"
             />
 
