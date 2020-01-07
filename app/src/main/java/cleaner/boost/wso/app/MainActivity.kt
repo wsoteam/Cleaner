@@ -42,6 +42,13 @@ class MainActivity : AppCompatActivity(), Preference.OnPreferenceClickListener {
     //todo Prefs
     internal var consent: Boolean = false
 
+    val BOOSTER = 0
+    val BATTERY = 1
+    val FAN = 2
+    val CLEAN = 3
+    val SUB = 4
+    val PAGE_COUNT = 4
+
 
     private val isNetworkAvailable: Boolean
         get() {
@@ -134,17 +141,15 @@ class MainActivity : AppCompatActivity(), Preference.OnPreferenceClickListener {
         }
         val adapter = MyPagerAdapter(supportFragmentManager, tab_layout.maxItemCount)
         pager.adapter = adapter
-
-        pager.offscreenPageLimit = 4
-        //        viewPager.setCurrentItem(4);
+        pager.offscreenPageLimit = tab_layout.maxItemCount
 
         tab_layout.setOnNavigationItemSelectedListener(object : OnNavigationItemSelectedListener {
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when (item.itemId){
-                    R.id.nav_boost -> pager.currentItem = 0
-                    R.id.nav_battery -> pager.currentItem = 1
-                    R.id.nav_fan -> pager.currentItem = 2
-                    R.id.nav_delete -> pager.currentItem = 3
+                    R.id.nav_boost -> pager.currentItem = BOOSTER
+                    R.id.nav_battery -> pager.currentItem = BATTERY
+                    R.id.nav_fan -> pager.currentItem = FAN
+                    R.id.nav_delete -> pager.currentItem = CLEAN
                 }
                 return true
             }

@@ -149,10 +149,8 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.phone_booster, container, false)
-
-
-
-
+        la_ai.setAnimation("main_ripple.json")
+        la_ai.playAnimation()
         return view
     }
 
@@ -168,32 +166,19 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
             centree.text = it
         })
 
-
-
-
-
-
         try {
-
             MainActivity.setInfo(R.string.charge_booster)
-
             try {
                 val totalRAM = totalRAM
                 ramperct.setText(String.format("%d%%", Math.round(usedMemorySize / java.lang.Float.parseFloat(totalRAM.substring(0, totalRAM.length - 3)) * 100 / 1024)))
             } catch (e: Exception) {
                 ramperct.text = "58%"
             }
-
-
-            //optbutton.setBackgroundResource(0);
-            //optbutton.setImageResource(0);
             optbutton.setText(R.string.optimize)
 
             if (PreferencesProvider.getInstance().getString("booster", "1") == "0") {
                 optbutton.setText(R.string.optimized)
-
                 centreeText.postValue(Math.round((1 * usedMemorySize).toFloat()).toString() + " MB")
-
             }
 
             start()
@@ -201,23 +186,10 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
             optbutton.setOnClickListener {
                 if (PreferencesProvider.getInstance().getString("booster", "1") == "1") {
                     optimize()
-
                     PreferencesProvider.getInstance().edit()
                             .putString("booster", "0")
                             .apply()
-
-
-                    //Intent intent = new Intent(getActivity(), Alarm_Booster.class);
-
-                    //PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0,
-                    //        intent, PendingIntent.FLAG_ONE_SHOT);
-
-                    //AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE);
-                    //alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (100 * 1000), pendingIntent);
                 } else {
-
-                    //                            Toast.makeText(getActivity(), "Phone Is Aleady Optimized", Toast.LENGTH_SHORT).show();
-
                     @SuppressLint("RestrictedApi") val inflater = getLayoutInflater(arguments)
                     val layout = inflater.inflate(R.layout.my_toast, null)
 
@@ -229,14 +201,8 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
                     toast.duration = Toast.LENGTH_LONG
                     toast.view = layout
                     toast.show()
-
                 }
             }
-
-            //#F22938 red
-            // Create background track
-
-            //    optimize();
         } catch (e: Exception) {
 
         }
@@ -253,32 +219,8 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
         image.startAnimation(rotate)
 
 
-        dynamicArcView2.addSeries(SeriesItem.Builder(Color.argb(255, 218, 218, 218))
-                .setRange(0f, 100f, 0f)
-                .setInterpolator(AccelerateInterpolator())
-                .build())
 
-        dynamicArcView2.addSeries(SeriesItem.Builder(Color.parseColor("#F22938"))
-                .setRange(0f, 100f, 100f)
-                .setInitialVisibility(false)
-                .setLineWidth(32f)
-                .build())
-
-        //Create data series track
-        val seriesItem1 = SeriesItem.Builder(Color.parseColor("#F22938"))
-                .setRange(0f, 100f, 0f)
-                .setLineWidth(32f)
-                .build()
-
-        val seriesItem2 = SeriesItem.Builder(Color.parseColor("#2499E0"))
-                .setRange(0f, 100f, 0f)
-                .setLineWidth(32f)
-                .build()
-        //
-        //        int series1Index = dynamicArcView2.addSeries(seriesItem1);
-        val series1Index2 = dynamicArcView2.addSeries(seriesItem2)
-
-        dynamicArcView2.addEvent(DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
+        /*dynamicArcView2.addEvent(DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
                 .setDelay(300)
                 .setDuration(300)
                 .setListener(object : DecoEvent.ExecuteEventListener {
@@ -317,7 +259,7 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
                 }
             }
-        }).build())
+        }).build())*/
 
 
         val animation = TranslateAnimation(0.0f, 1000.0f, 0.0f, 0.0f)          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
@@ -365,55 +307,6 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
                 x = ran.nextInt(40) - 20
 
                 processes.text = (Math.round((1 * usedMemorySize).toFloat()) + x).toString() + ""
-
-
-                //                optbutton.setOnClickListener(new View.OnClickListener() {
-                //                    @Override
-                //                    public void onClick(View v) {
-                ////                        optbutton.setBackgroundResource(R.drawable.optimized);
-                //                        Toast.makeText(getActivity(), "Already Optimized", Toast.LENGTH_SHORT).show();
-                //                    }
-                //                });
-                //
-                //
-                //                final Timer t = new Timer();
-                //                final Timer t2 = new Timer();
-                //
-                //
-                //                timer = new TimerTask() {
-                //
-                //                    @Override
-                //                    public void run() {
-                //
-                //                        getActivity().runOnUiThread(new Runnable() {
-                //                            @Override
-                //                            public void run() {
-                //                                optbutton.setBackgroundResource(0);
-                //                                optbutton.setBackgroundResource(R.drawable.optimize);
-                //
-                //                                optbutton.setOnClickListener(new View.OnClickListener() {
-                //                                    @Override
-                //                                    public void onClick(View v) {
-                //
-                //                                        optimize();
-                //                                    }
-                //                                });
-                //                                t.cancel();
-                //                                timer.cancel();
-                //                                t.purge();
-                //
-                //
-                //                            }
-                //                        });
-                //
-                //
-                //                    }
-                //
-                //                };
-                ////Set the schedule function and rate
-                //
-                //                t.schedule(timer, 300000, 300000);
-
             }
 
             override fun onAnimationRepeat(animation: Animation) {
@@ -453,7 +346,7 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
         val proc = ran2.nextInt(60) + 30
 
 
-        dynamicArcView2.addSeries(SeriesItem.Builder(Color.argb(255, 218, 218, 218))
+        /*dynamicArcView2.addSeries(SeriesItem.Builder(Color.argb(255, 218, 218, 218))
                 .setRange(0f, 100f, 0f)
                 .setInterpolator(AccelerateInterpolator())
                 .build())
@@ -548,7 +441,7 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
 
             }
-        }).build())
+        }).build())*/
         //        centree.setText(getUsedMemorySize()+" MB");
         Log.e(getString(R.string.used_mem), "$usedMemorySize MB")
         Log.e(getString(R.string.used_mem), totalRAM)
