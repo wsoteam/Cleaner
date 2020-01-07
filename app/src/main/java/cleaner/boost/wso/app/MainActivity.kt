@@ -32,6 +32,8 @@ import java.util.Calendar
 
 import cleaner.boost.wso.app.Constants.adsShow
 import cleaner.boost.wso.app.utils.PreferencesProvider
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.banner_layout.*
 
@@ -126,54 +128,25 @@ class MainActivity : AppCompatActivity(), Preference.OnPreferenceClickListener {
         }
 
 
-        //        setTheme(R.style.AppTheme1);
-
-        //        ImageView heart = (ImageView) findViewById(R.id.backbar);
-        //
-        //        TranslateAnimation animation = new TranslateAnimation(0.0f, 1000.0f, 0.0f, 0.0f);
-        //        new TranslateAnimation(xFrom,xTo, yFrom,yTo)
-        //        animation.setDuration(10000);  // animation duration
-        //        animation.setRepeatCount(0);
-        //        animation.setInterpolator(new LinearInterpolator());// animation repeat count
-        ////        animation.setRepeatMode(2);   // repeat animation (left to right, right to left )
-        //        animation.setFillAfter(true);
-        //
-        //        heart.startAnimation(animation);
-
-
-        ////// Create Tabs Layout.
-
-        tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.phonebooster))
-        tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.battery_saver))
-        tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.cooler))
-        tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.cleaner))
         Log.i("adsShow", adsShow.toString())
         if (!SubscriptionProvider.hasSubscription()) {
-            tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.ads))
+            //tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.ads))
         }
-        tab_layout.tabGravity = TabLayout.GRAVITY_FILL
-
-        val adapter = MyPagerAdapter(supportFragmentManager, tab_layout.tabCount)
+        val adapter = MyPagerAdapter(supportFragmentManager, tab_layout.maxItemCount)
         pager.adapter = adapter
 
         pager.offscreenPageLimit = 4
         //        viewPager.setCurrentItem(4);
 
-        pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
-
-        tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-
-                pager.currentItem = tab.position
-
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab) {
-
+        tab_layout.setOnNavigationItemSelectedListener(object : OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when (item.itemId){
+                    R.id.nav_boost -> pager.currentItem = 0
+                    R.id.nav_battery -> pager.currentItem = 1
+                    R.id.nav_fan -> pager.currentItem = 2
+                    R.id.nav_delete -> pager.currentItem = 3
+                }
+                return true
             }
         })
 //        PopUpAds.ShowInterstitialAds(getApplicationContext());
