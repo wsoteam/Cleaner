@@ -30,8 +30,7 @@ class BatterySaverFrag : Fragment() {
         override fun onReceive(ctxt: Context, intent: Intent) {
             val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
 
-            waveView.progressValue = level
-            waveView.centerTitle = "$level%"
+            tvLevel.text = "$level%"
 
             if (level <= 5) {
                 if (PreferencesProvider.getInstance().getString("mode", "0") == "0") {
@@ -162,7 +161,7 @@ class BatterySaverFrag : Fragment() {
         super.onActivityCreated(savedInstanceState)
         try {
 
-            powersaving.setOnClickListener {
+            /*powersaving.setOnClickListener {
                 val i = Intent(activity, PowerSaving_popup::class.java)
                 startActivity(i)
             }
@@ -177,7 +176,9 @@ class BatterySaverFrag : Fragment() {
                 startActivity(i)
             }
 
-
+            abnb_wave.setAnimation("6624-moving-circles.json")
+            abnb_wave.loop(true)
+            abnb_wave.playAnimation()
 
             waveView.setShapeType(WaveLoadingView.ShapeType.CIRCLE)
             waveView.centerTitleColor = Color.parseColor("#7a67a7")
@@ -185,7 +186,7 @@ class BatterySaverFrag : Fragment() {
             waveView.setAmplitudeRatio(30)
             waveView.waveColor = Color.parseColor("#2499E0")
             waveView.setAnimDuration(3000)
-            waveView.startAnimation()
+            waveView.startAnimation()*/
         } catch (e: Exception) {
             e.printStackTrace()
         }
