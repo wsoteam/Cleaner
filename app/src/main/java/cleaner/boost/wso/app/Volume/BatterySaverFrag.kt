@@ -161,32 +161,21 @@ class BatterySaverFrag : Fragment() {
         super.onActivityCreated(savedInstanceState)
         try {
 
-            /*powersaving.setOnClickListener {
+            imageView3.setOnClickListener {
                 val i = Intent(activity, PowerSaving_popup::class.java)
                 startActivity(i)
             }
 
-            ultra.setOnClickListener {
+            imageView7.setOnClickListener {
                 val i = Intent(activity, Ultra_PopUp::class.java)
                 startActivity(i)
             }
 
-            normal.setOnClickListener {
+            imageView6.setOnClickListener {
                 val i = Intent(activity, Noraml_Mode::class.java)
                 startActivity(i)
             }
 
-            abnb_wave.setAnimation("6624-moving-circles.json")
-            abnb_wave.loop(true)
-            abnb_wave.playAnimation()
-
-            waveView.setShapeType(WaveLoadingView.ShapeType.CIRCLE)
-            waveView.centerTitleColor = Color.parseColor("#7a67a7")
-            waveView.bottomTitleColor = Color.parseColor("#FFFFFF")
-            waveView.setAmplitudeRatio(30)
-            waveView.waveColor = Color.parseColor("#2499E0")
-            waveView.setAnimDuration(3000)
-            waveView.startAnimation()*/
         } catch (e: Exception) {
             e.printStackTrace()
         }
