@@ -67,21 +67,6 @@ class Noraml_Mode : Activity(), AdMobFullscreenManager.AdMobFullscreenDelegate {
 
 
 
-        dynamicArcView2.addEvent(DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
-                .setDelay(0)
-                .setDuration(0)
-                .setListener(object : DecoEvent.ExecuteEventListener {
-                    override fun onEventStart(decoEvent: DecoEvent) {
-
-                    }
-
-                    override fun onEventEnd(decoEvent: DecoEvent) {
-
-                    }
-
-                })
-                .build())
-
         dynamicArcView2.addEvent(DecoEvent.Builder(100f).setIndex(series1Index2).setDelay(1000).setListener(object : DecoEvent.ExecuteEventListener {
             override fun onEventStart(decoEvent: DecoEvent) {
 
