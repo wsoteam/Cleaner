@@ -161,6 +161,11 @@ class BatterySaverFrag : Fragment() {
         super.onActivityCreated(savedInstanceState)
         try {
 
+            imageView3.setOnClickListener {
+                val i = Intent(activity, Noraml_Mode::class.java)
+                startActivity(i)
+            }
+
             imageView6.setOnClickListener {
                 val i = Intent(activity, PowerSaving_popup::class.java)
                 startActivity(i)
@@ -171,10 +176,7 @@ class BatterySaverFrag : Fragment() {
                 startActivity(i)
             }
 
-            imageView3.setOnClickListener {
-                val i = Intent(activity, Noraml_Mode::class.java)
-                startActivity(i)
-            }
+
 
         } catch (e: Exception) {
             e.printStackTrace()

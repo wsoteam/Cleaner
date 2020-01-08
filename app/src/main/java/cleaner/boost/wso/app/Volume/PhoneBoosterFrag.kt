@@ -321,9 +321,6 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
             .putString("value", "$usedMemorySize MB")
             .apply()
 
-        Log.e("used mem", "$usedMemorySize MB")
-        Log.e("used mem", totalRAM)
-
         totalram.text = totalRAM
         usedram.text = "$usedMemorySize MB/ "
 
