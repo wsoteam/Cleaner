@@ -52,34 +52,18 @@ class PowerSaving_popup : Activity() {
 
             finish()
         }
-
-        recycler_view.itemAnimator = SlideInLeftAnimator()
-        //                RecyclerView recycler_view = (RecyclerView) findViewById(R.id.list);
-        //                recycler_view.setItemAnimator(new SlideInUpAnimator(new OvershootInterpolator(1f)));
-
-        recycler_view.itemAnimator!!.addDuration = 200
-
-        mAdapter = PowerAdapter(items)
-        val mLayoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-        recycler_view.layoutManager = mLayoutManager
-        recycler_view.itemAnimator = SlideInUpAnimator(OvershootInterpolator(1f))
-        recycler_view.computeHorizontalScrollExtent()
-        recycler_view.adapter = mAdapter
-        mAdapter.notifyDataSetChanged()
-
-
+        abnb_normal_charge.setAnimation("8577-battery.json")
+        abnb_normal_charge.frame = 51
+        abnb_normal_charge.loop(false)
+        abnb_normal_charge.playAnimation()
     }
 
     fun add(text: String, position: Int) {
-
-
         val item = PowersClass(text)
         items.add(item)
-        //        mDataSet.add(position, text);
         mAdapter.notifyItemInserted(position)
     }
 
-    //
     override fun onBackPressed() {
         //   super.onBackPressed();
     }
