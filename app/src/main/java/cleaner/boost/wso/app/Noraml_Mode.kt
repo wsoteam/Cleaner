@@ -1,6 +1,7 @@
 package cleaner.boost.wso.app
 
 import android.Manifest
+import android.animation.Animator
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentResolver
@@ -14,6 +15,7 @@ import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.util.Log
+import android.view.View
 
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -52,38 +54,32 @@ class Noraml_Mode : Activity(), AdMobFullscreenManager.AdMobFullscreenDelegate {
         }
         adsBatterySaver = !adsBatterySaver
 
-        dynamicArcView2.addSeries(SeriesItem.Builder(Color.parseColor("#27282D"))
-                .setRange(0f, 100f, 100f)
-                .setInitialVisibility(false)
-                .setLineWidth(12f)
-                .build())
-
-        val seriesItem2 = SeriesItem.Builder(Color.parseColor("#FFFFFF"))
-                .setRange(0f, 100f, 0f)
-                .setLineWidth(10f)
-                .build()
-
-        val series1Index2 = dynamicArcView2.addSeries(seriesItem2)
-
-
-
-        dynamicArcView2.addEvent(DecoEvent.Builder(100f).setIndex(series1Index2).setDelay(1000).setListener(object : DecoEvent.ExecuteEventListener {
-            override fun onEventStart(decoEvent: DecoEvent) {
-
+        abnb_low_charge.setAnimation("low_charge.json")
+        abnb_low_charge.playAnimation()
+        abnb_low_charge.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {
             }
 
-            override fun onEventEnd(decoEvent: DecoEvent) {
+            override fun onAnimationCancel(animation: Animator?) {
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                tvLoad.visibility = View.VISIBLE
                 if (adsShow) {
                     adManager!!.completed()
                 } else {
                     check = 1
                     youDesirePermissionCode(this@Noraml_Mode)
                     PreferencesProvider.getInstance().edit()
-                            .putString("mode", "0")
-                            .apply()
+                        .putString("mode", "0")
+                        .apply()
                 }
             }
-        }).build())
+        })
+
     }
 
     fun enablesall() {
