@@ -3,7 +3,6 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#27282D"
     android:orientation="vertical"
     android:weightSum="10">
 
@@ -11,7 +10,6 @@
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_weight="5.5"
-      android:background="#27282D"
       android:gravity="center">
 
     <RelativeLayout
@@ -25,7 +23,8 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:layout_centerInParent="true"
-          android:src="@drawable/black_circle" />
+          android:src="@drawable/black_circle"
+          android:visibility="invisible"/>
 
       <ImageView
           android:id="@+id/waves"
@@ -76,7 +75,7 @@
             android:gravity="center"
             android:text="@string/storage"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#F22938" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/centree"
@@ -84,7 +83,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="@dimen/_24sdp" />
 
         <TextView
@@ -95,7 +94,7 @@
             android:gravity="center"
             android:text="@string/found"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#24D149" />
+            android:textColor="@color/black" />
 
       </LinearLayout>
 
@@ -108,8 +107,7 @@
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:layout_weight="1.2"
-      android:background="#27282D">
+      android:layout_weight="1.2">
 
     <LinearLayout
         android:id="@+id/scanlay"
@@ -123,7 +121,7 @@
           android:layout_height="match_parent"
           android:gravity="center"
           android:textAppearance="?android:textAppearanceLarge"
-          android:textColor="#FFFFFF" />
+          android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -136,14 +134,19 @@
 
       <Button
           android:id="@+id/optbutton"
-          style="@style/HabraThemeButton"
-          android:layout_width="@dimen/_150sdp"
-          android:layout_height="@dimen/_40sdp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingBottom="15dp"
+          android:paddingTop="15dp"
+          android:paddingEnd="40dp"
+          android:paddingStart="40dp"
           android:layout_gravity="center"
           android:layout_marginBottom="@dimen/_10sdp"
           android:text="@string/optimize"
-          android:textColor="@android:color/background_light"
-
+          android:textSize="18sp"
+          android:textStyle="bold"
+          android:textColor="@color/btn_white"
+          android:background="@drawable/btn_optimize"
           />
 
     </LinearLayout>
@@ -160,12 +163,10 @@
       android:weightSum="2">
 
     <LinearLayout
-
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="1dp"
         android:layout_weight="1"
-        android:background="#27282D"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="@dimen/_1sdp"
@@ -260,7 +261,6 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="1dp"
         android:layout_weight="2"
-        android:background="#27282D"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="@dimen/_1sdp"
@@ -288,7 +288,7 @@
             android:gravity="center"
             android:text="48%"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="@dimen/_22sdp"
             android:visibility="visible" />
 
@@ -308,7 +308,7 @@
             android:gravity="center"
             android:text="@string/ram_usage"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
       </LinearLayout>
@@ -330,7 +330,7 @@
             android:gravity="right"
             android:text="1.24 GB/"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
 
@@ -342,10 +342,12 @@
             android:gravity="left"
             android:text="2.67 GB"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
       </LinearLayout>
+
+
 
     </LinearLayout>
 

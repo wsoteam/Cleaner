@@ -215,6 +215,17 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
     image.startAnimation(rotate)
 
+    dynamicArcView2.addSeries(SeriesItem.Builder(Color.argb(255, 218, 218, 218))
+        .setRange(0f, 100f, 0f)
+        .setInterpolator(AccelerateInterpolator())
+        .build())
+
+    dynamicArcView2.addSeries(SeriesItem.Builder(Color.parseColor("#C7B2F7"))
+        .setRange(0f, 100f, 100f)
+        .setInitialVisibility(false)
+        .setLineWidth(32f)
+        .build())
+
     val seriesItem2 = SeriesItem.Builder(Color.parseColor("#7531d4"))
         .setRange(0f, 100f, 0f)
         .setLineWidth(32f)
@@ -350,6 +361,17 @@ class PhoneBoosterFrag : Fragment(), AdMobFullscreenManager.AdMobFullscreenDeleg
 
     val ran2 = Random()
     val proc = ran2.nextInt(60) + 30
+
+    dynamicArcView2.addSeries(SeriesItem.Builder(Color.argb(255, 218, 218, 218))
+        .setRange(0f, 100f, 0f)
+        .setInterpolator(AccelerateInterpolator())
+        .build())
+
+    dynamicArcView2.addSeries(SeriesItem.Builder(Color.parseColor("#C7B2F7"))
+        .setRange(0f, 100f, 100f)
+        .setInitialVisibility(false)
+        .setLineWidth(32f)
+        .build())
 
     val seriesItem2 = SeriesItem.Builder(Color.parseColor("#7531d4"))
         .setRange(0f, 100f, 0f)
