@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
     android:orientation="vertical"
     android:weightSum="10">
 
@@ -11,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.5"
-        android:background="#27282D"
         android:orientation="vertical"
         android:weightSum="10">
 
@@ -21,10 +19,6 @@
             android:layout_weight="7"
             android:gravity="center">
 
-            <ImageView
-            android:src="@drawable/blue_circle_battery"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,23 +31,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    app:wlv_borderColor="#FFFFFF"
-                    app:wlv_borderWidth="6dp"
                     app:wlv_progressValue="40"
-                    app:wlv_round_rectangle="true"
-                    app:wlv_shapeType="circle"
-                    app:wlv_titleBottomSize="@dimen/_30sdp"
-
                     app:wlv_titleCenterColor="#FFFFFF"
                     app:wlv_titleCenterSize="@dimen/_30sdp"
                     app:wlv_titleCenterStrokeColor="#FFFFFF"
-                    app:wlv_titleCenterStrokeWidth="2dp"
-                    app:wlv_triangle_direction="north"
                     app:wlv_waveAmplitude="40"
+                    android:visibility="gone"
                     app:wlv_waveColor="#2499E0" />
 
-            </RelativeLayout>
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    />
 
+            </RelativeLayout>
         </RelativeLayout>
 
         <LinearLayout
@@ -76,14 +68,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="8"
-                    android:textColor="#24D149"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_30sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" h"
-                    android:textColor="#24D149"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_24sdp" />
 
 
@@ -93,14 +85,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_15sdp"
                     android:text="15"
-                    android:textColor="#24D149"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_30sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" m"
-                    android:textColor="#24D149"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/_24sdp" />
 
             </LinearLayout>
@@ -111,7 +103,7 @@
                 android:layout_weight="1"
                 android:gravity="top|center"
                 android:text="@string/charging_time_remaning"
-                android:textColor="#24D149"
+                android:textColor="@color/black"
                 android:textSize="@dimen/_18sdp" />
 
 
@@ -127,7 +119,6 @@
         android:layout_height="0dp"
         android:layout_marginTop="1dp"
         android:layout_weight="3.5"
-        android:background="#27282D"
         android:orientation="horizontal"
         android:weightSum="5">
 

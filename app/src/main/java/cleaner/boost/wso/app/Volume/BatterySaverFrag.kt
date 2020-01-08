@@ -22,9 +22,6 @@ import kotlinx.android.synthetic.main.battery_saver.*
 
 import me.itangqi.waveloadingview.WaveLoadingView
 
-/**
- * Created by intag pc on 2/12/2017.
- */
 
 class BatterySaverFrag : Fragment() {
 
@@ -34,12 +31,9 @@ class BatterySaverFrag : Fragment() {
             val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)
 
             waveView.progressValue = level
-            //            waveView.setBottomTitle(level+"%");
             waveView.centerTitle = "$level%"
 
             if (level <= 5) {
-
-
                 if (PreferencesProvider.getInstance().getString("mode", "0") == "0") {
                     hourmain.text = 0.toString() + ""
                     minutesmain.text = 15.toString() + ""
@@ -161,9 +155,7 @@ class BatterySaverFrag : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val battery_saver = inflater.inflate(R.layout.battery_saver, container, false)
-
         return battery_saver
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -186,22 +178,14 @@ class BatterySaverFrag : Fragment() {
             }
 
 
+
             waveView.setShapeType(WaveLoadingView.ShapeType.CIRCLE)
-            waveView.centerTitleColor = Color.parseColor("#FFFFFF")
+            waveView.centerTitleColor = Color.parseColor("#7a67a7")
             waveView.bottomTitleColor = Color.parseColor("#FFFFFF")
-            waveView.borderWidth = 10f
             waveView.setAmplitudeRatio(30)
             waveView.waveColor = Color.parseColor("#2499E0")
-            waveView.borderColor = Color.parseColor("#000000")
-            waveView.setTopTitleStrokeColor(Color.BLUE)
-            waveView.setTopTitleStrokeWidth(3f)
             waveView.setAnimDuration(3000)
-            //        waveView.pauseAnimation();
-            //        waveView.resumeAnimation();
-            //        waveView.cancelAnimation();
             waveView.startAnimation()
-
-
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -210,7 +194,6 @@ class BatterySaverFrag : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //        MainActivity.name.setText("Battery Saver");
         activity!!.registerReceiver(this.mBatInfoReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
     }
 
@@ -227,12 +210,9 @@ class BatterySaverFrag : Fragment() {
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
-
         if (isVisibleToUser) {
             MainActivity.setInfo(R.string.battery_saver)
-
         } else {
-
         }
     }
 
