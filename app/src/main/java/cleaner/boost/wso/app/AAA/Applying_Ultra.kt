@@ -33,10 +33,6 @@ import kotlinx.android.synthetic.main.applying_ultra.*
  */
 
 class Applying_Ultra : Activity() {
-
-
-    //// activate ultra powersaving mode by closing system services
-
     internal var check = 0
     private var mAdView: AdView? = null
 
@@ -48,34 +44,17 @@ class Applying_Ultra : Activity() {
         val adRequest = AdRequest.Builder().build()
         mAdView!!.loadAd(adRequest)
 
-
-
-
-
-
-        //        dynamicArcView2.addSeries(new SeriesItem.Builder(Color.argb(255, 218, 218, 218))
-        //                .setRange(0, 100, 0)
-        //                .setInterpolator(new AccelerateInterpolator())
-        //                .build());
-
         dynamicArcView2.addSeries(SeriesItem.Builder(Color.parseColor("#27282D"))
                 .setRange(0f, 100f, 100f)
                 .setInitialVisibility(false)
                 .setLineWidth(12f)
                 .build())
 
-        //Create data series track
-        val seriesItem1 = SeriesItem.Builder(Color.parseColor("#27282D"))
-                .setRange(0f, 100f, 0f)
-                .setLineWidth(10f)
-                .build()
-
         val seriesItem2 = SeriesItem.Builder(Color.parseColor("#FFFFFF"))
                 .setRange(0f, 100f, 0f)
                 .setLineWidth(10f)
                 .build()
-        //
-        //        int series1Index = dynamicArcView2.addSeries(seriesItem1);
+
         val series1Index2 = dynamicArcView2.addSeries(seriesItem2)
 
         seriesItem2.addArcSeriesItemListener(object : SeriesItem.SeriesItemListener {
@@ -111,51 +90,26 @@ class Applying_Ultra : Activity() {
             }
         })
 
-
         dynamicArcView2.addEvent(DecoEvent.Builder(DecoEvent.EventType.EVENT_SHOW, true)
                 .setDelay(0)
                 .setDuration(0)
                 .setListener(object : DecoEvent.ExecuteEventListener {
                     override fun onEventStart(decoEvent: DecoEvent) {
-                        //                        bottom.setText("");
-                        //                        top.setText("");
-                        //                        centree.setText("Optimizing...");
-
                     }
 
                     override fun onEventEnd(decoEvent: DecoEvent) {
-
                     }
-
                 })
                 .build())
 
         dynamicArcView2.addEvent(DecoEvent.Builder(100f).setIndex(series1Index2).setDelay(1000).setListener(object : DecoEvent.ExecuteEventListener {
             override fun onEventStart(decoEvent: DecoEvent) {
-                //                bottom.setText("");
-                //                top.setText("");
-                //                centree.setText("Optimizing...");
             }
 
             override fun onEventEnd(decoEvent: DecoEvent) {
-                //                bottom.setText("Found");
-                //                top.setText("Storage");
-                //                Random ran3 = new Random();
-                //                ramperct.setText(ran3.nextInt(40) + 20+"%");
-
-
                 check = 1
                 youDesirePermissionCode(this@Applying_Ultra)
-
-
-
-
-
-
-
                 enablesall()
-                //                editor.putString("mode", "2");
-                //                editor.commit();
             }
         }).build())
     }
@@ -165,22 +119,11 @@ class Applying_Ultra : Activity() {
         if (mBluetoothAdapter.isEnabled) {
             mBluetoothAdapter.disable()
         }
-
         val wifiManager = application.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
-
-
         val wifiEnabled = wifiManager.isWifiEnabled
         if (wifiEnabled) {
             wifiManager.isWifiEnabled = false
         }
-
-        //        setAutoOrientationEnabled(getApplicationContext(), false);
-        //
-        //        Settings.System.putInt(this.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 20);
-        //
-        //        ContentResolver.setMasterSyncAutomatically(false);
-
-
     }
 
 
@@ -194,17 +137,9 @@ class Applying_Ultra : Activity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && Settings.System.canWrite(this)) {
             Log.d("TAG", "CODE_WRITE_SETTINGS_PERMISSION success")
-
-
-            //            Toast.makeText(getApplicationContext(),"onActivityResult",Toast.LENGTH_LONG).show();
-            //do your code
             PowerSaving_Complition.setAutoOrientationEnabled(applicationContext, false)
-
             Settings.System.putInt(this.contentResolver, Settings.System.SCREEN_BRIGHTNESS, 20)
-
             ContentResolver.setMasterSyncAutomatically(false)
-
-
             val i = Intent(this@Applying_Ultra, BatterySaver_Black::class.java)
             startActivity(i)
             finish()
@@ -218,18 +153,12 @@ class Applying_Ultra : Activity() {
             permission = Settings.System.canWrite(context)
         } else {
             permission = ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_SETTINGS) == PackageManager.PERMISSION_GRANTED
-            //            Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 30);
-            //            setAutoOrientationEnabled(context, false);
         }
         if (permission) {
             //do your code
             PowerSaving_Complition.setAutoOrientationEnabled(applicationContext, false)
-
             Settings.System.putInt(this.contentResolver, Settings.System.SCREEN_BRIGHTNESS, 20)
-
             ContentResolver.setMasterSyncAutomatically(false)
-
-
             val i = Intent(this@Applying_Ultra, BatterySaver_Black::class.java)
             startActivity(i)
             finish()
@@ -247,20 +176,11 @@ class Applying_Ultra : Activity() {
 
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            //do your code
-
-            //            Toast.makeText(getApplicationContext(),"onRequestPermissionsResult",Toast.LENGTH_LONG).show();
-
             PowerSaving_Complition.setAutoOrientationEnabled(applicationContext, false)
-
             Settings.System.putInt(this.contentResolver, Settings.System.SCREEN_BRIGHTNESS, 20)
-
             ContentResolver.setMasterSyncAutomatically(false)
-
-
             val i = Intent(this@Applying_Ultra, BatterySaver_Black::class.java)
             startActivity(i)
             finish()
@@ -274,17 +194,13 @@ class Applying_Ultra : Activity() {
         if (check == 1) {
             try {
                 PowerSaving_Complition.setAutoOrientationEnabled(applicationContext, false)
-
                 Settings.System.putInt(this.contentResolver, Settings.System.SCREEN_BRIGHTNESS, 20)
-
                 ContentResolver.setMasterSyncAutomatically(false)
-
             } catch (e: Exception) {
                 val i = Intent(this@Applying_Ultra, BatterySaver_Black::class.java)
                 startActivity(i)
                 finish()
             }
-
             val i = Intent(this@Applying_Ultra, BatterySaver_Black::class.java)
             startActivity(i)
             finish()
