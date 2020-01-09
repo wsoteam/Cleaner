@@ -16,6 +16,7 @@ import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import android.util.Log
+import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
 
 import cleaner.boost.wso.app.AdMobFullscreenManager
@@ -27,6 +28,7 @@ import com.hookedonplay.decoviewlib.charts.SeriesItem
 import com.hookedonplay.decoviewlib.events.DecoEvent
 
 import cleaner.boost.wso.app.Constants.adsShow
+import kotlinx.android.synthetic.main.phone_booster.dynamicArcView2
 import kotlinx.android.synthetic.main.powersaving_completion.*
 
 class PowerSaving_Complition : Activity(), AdMobFullscreenManager.AdMobFullscreenDelegate {
@@ -52,17 +54,20 @@ class PowerSaving_Complition : Activity(), AdMobFullscreenManager.AdMobFullscree
         .build()
     mAdView!!.loadAd(adRequest)
 
-    dynamicArcView2.addSeries(
-        SeriesItem.Builder(Color.parseColor("#27282D"))
-            .setRange(0f, 100f, 100f)
-            .setInitialVisibility(false)
-            .setLineWidth(12f)
-            .build()
-    )
-
-    val seriesItem2 = SeriesItem.Builder(Color.parseColor("#FFFFFF"))
+    dynamicArcView2.addSeries(SeriesItem.Builder(Color.argb(255, 218, 218, 218))
         .setRange(0f, 100f, 0f)
-        .setLineWidth(10f)
+        .setInterpolator(AccelerateInterpolator())
+        .build())
+
+    dynamicArcView2.addSeries(SeriesItem.Builder(Color.parseColor("#00ca71"))
+        .setRange(0f, 100f, 100f)
+        .setInitialVisibility(false)
+        .setLineWidth(32f)
+        .build())
+
+    val seriesItem2 = SeriesItem.Builder(Color.parseColor("#00ca71"))
+        .setRange(0f, 100f, 0f)
+        .setLineWidth(32f)
         .build()
 
     val series1Index2 = dynamicArcView2.addSeries(seriesItem2)

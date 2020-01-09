@@ -21,5 +21,5 @@
     <color name="main_color_inactive">#C7B2F7</color>
     <color name="main_color_unactive">#7531d4</color>
     <color name="green_color_active">#00ca71</color>
-    <color name="green_color_inactive">#65CCA2</color>
+    <color name="green_color_inactive">#7065CCA2</color>
 </resources>
