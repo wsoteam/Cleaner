@@ -11,6 +11,7 @@ import com.yandex.metrica.YandexMetrica
 import com.yandex.metrica.YandexMetricaConfig
 
 import com.facebook.FacebookSdk.setAutoLogAppEventsEnabled
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.rt.ModuleApplication
 import ru.mail.aslanisl.mobpirate.MobPirate
 
@@ -28,6 +29,7 @@ class MyApp : ModuleApplication() {
         setAutoLogAppEventsEnabled(true)
         AppEventsLogger.activateApp(this)
         MobPirate.getInstance().init(this, getString(R.string.facebook_app_id))
+        val mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         MobileAds.initialize(this, "ca-app-pub-3050564412171997~4260778012") //ca-app-pub-9387354664905418~6073119457
         // Создание расширенной конфигурации библиотеки.

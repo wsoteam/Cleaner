@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "37710964854",
-    "firebase_url": "https://cleaner-f387a.firebaseio.com",
-    "project_id": "cleaner-f387a",
-    "storage_bucket": "cleaner-f387a.appspot.com"
+    "project_number": "847671477554",
+    "firebase_url": "https://cleaner-01-20.firebaseio.com",
+    "project_id": "cleaner-01-20",
+    "storage_bucket": "cleaner-01-20.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:37710964854:android:8ab185210ca04ff4a71757",
+        "mobilesdk_app_id": "1:847671477554:android:e7747ec89d356801fe432b",
         "android_client_info": {
           "package_name": "cleaner.boost.wso.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "37710964854-n0vgqm1r01fjukjge799kf9fm71augst.apps.googleusercontent.com",
+          "client_id": "847671477554-gddinvm02c95lqrf385qqtirlfg10rn2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cleaner.boost.wso.app",
+            "certificate_hash": "9a3df1a74b48c4ee8e31bddbb54686213c5f241d"
+          }
+        },
+        {
+          "client_id": "847671477554-d93l18gi1lu16vec9f3111onbrtgpk2i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBX4uQtz3hiGHy3XisXEpMSvc1y5bhOCGw"
+          "current_key": "AIzaSyDGN0OfdmyX5YLysOaCZfw0VtO1Bq1en0M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "37710964854-n0vgqm1r01fjukjge799kf9fm71augst.apps.googleusercontent.com",
+              "client_id": "847671477554-d93l18gi1lu16vec9f3111onbrtgpk2i.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
