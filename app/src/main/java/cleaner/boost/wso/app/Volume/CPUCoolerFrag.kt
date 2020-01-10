@@ -48,6 +48,8 @@ class CPUCoolerFrag : Fragment() {
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
+    abnb_back.setAnimation("good_temp.json")
+    abnb_back.loop(true)
     imageResource.observe(this, Observer {
       tempimg.setImageResource(it)
     })
@@ -63,6 +65,7 @@ class CPUCoolerFrag : Fragment() {
         temp = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0).toFloat() / 10
         batterytemp.text = "$temp°C"
         if (temp >= 30.0) {
+          abnb_back.setAnimation("bad_temp.json")
           apps = ArrayList()
           apps2 = ArrayList()
           imageResource.postValue(R.drawable.red_cooler)
@@ -210,10 +213,18 @@ class CPUCoolerFrag : Fragment() {
   }
 
   override fun getUserVisibleHint(): Boolean {
-
     MainActivity.setInfo(R.string.cpu_cooler)
     return userVisibleHint
+  }
 
+  override fun onStop() {
+    abnb_back.setAnimation("good_temp.json")
+    super.onStop()
+  }
+
+  override fun onResume() {
+    abnb_back.playAnimation()
+    super.onResume()
   }
 
   override fun setUserVisibleHint(isVisibleToUser: Boolean) {
