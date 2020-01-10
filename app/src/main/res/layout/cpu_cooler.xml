@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="6"
-    android:background="#000000"
     android:gravity="center">
 
     <LinearLayout
-        android:background="#27282D"
         android:orientation="vertical"
         android:layout_weight="4.8"
         android:layout_width="match_parent"
@@ -34,7 +32,7 @@
             android:textSize="@dimen/_25sdp"
             android:layout_alignParentBottom="true"
             android:gravity="center"
-            android:textColor="#ffffff"
+            android:textColor="@color/black"
             android:text="23.2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp" />
@@ -83,8 +81,6 @@
 
 
     <RelativeLayout
-        android:background="#27282D"
-
         android:layout_marginTop="1dp"
         android:layout_gravity="center"
         android:gravity="center"
@@ -114,9 +110,6 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
-
-
     </RelativeLayout>
 
 </LinearLayout>

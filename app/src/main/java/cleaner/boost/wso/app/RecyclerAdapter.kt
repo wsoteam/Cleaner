@@ -22,7 +22,6 @@ class RecyclerAdapter(var apps: List<ApplicationsClass>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
         val app = apps[position]
         holder.size.text = app.size
         holder.image.setImageDrawable(app.image)
