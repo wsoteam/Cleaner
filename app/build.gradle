@@ -3,12 +3,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
 
-/**
- * Шалом!
- * Проект не мой, но просили исправить пару багов
- * Последняя стабильная версия = t.me/olejajew
- */
-
 android {
   compileSdkVersion 29
   defaultConfig {

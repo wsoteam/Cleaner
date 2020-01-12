@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:847671477554:android:e7747ec89d356801fe432b",
+        "mobilesdk_app_id": "1:847671477554:android:da95ecdb811b38ddfe432b",
         "android_client_info": {
           "package_name": "cleaner.boost.wso.app"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "847671477554-gddinvm02c95lqrf385qqtirlfg10rn2.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "cleaner.boost.wso.app",
-            "certificate_hash": "9a3df1a74b48c4ee8e31bddbb54686213c5f241d"
-          }
-        },
         {
           "client_id": "847671477554-d93l18gi1lu16vec9f3111onbrtgpk2i.apps.googleusercontent.com",
           "client_type": 3
