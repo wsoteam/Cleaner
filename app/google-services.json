@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "847671477554",
-    "firebase_url": "https://cleaner-01-20.firebaseio.com",
-    "project_id": "cleaner-01-20",
-    "storage_bucket": "cleaner-01-20.appspot.com"
+    "project_number": "419777767069",
+    "firebase_url": "https://wsoteam-ca7cc.firebaseio.com",
+    "project_id": "wsoteam-ca7cc",
+    "storage_bucket": "wsoteam-ca7cc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:847671477554:android:da95ecdb811b38ddfe432b",
+        "mobilesdk_app_id": "1:419777767069:android:39ba6e16048e5ae1869674",
         "android_client_info": {
           "package_name": "cleaner.boost.wso.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "847671477554-d93l18gi1lu16vec9f3111onbrtgpk2i.apps.googleusercontent.com",
+          "client_id": "419777767069-4fge5u7a5jfli6arq4r9i2l3v7vdc0mi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDGN0OfdmyX5YLysOaCZfw0VtO1Bq1en0M"
+          "current_key": "AIzaSyDTptg1AzmofkbOH8gPbVKiXSE4qEdZptc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "847671477554-d93l18gi1lu16vec9f3111onbrtgpk2i.apps.googleusercontent.com",
+              "client_id": "419777767069-4fge5u7a5jfli6arq4r9i2l3v7vdc0mi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

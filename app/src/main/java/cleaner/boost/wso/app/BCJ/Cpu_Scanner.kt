@@ -64,6 +64,10 @@ class Cpu_Scanner : Activity(), AdMobFullscreenManager.AdMobFullscreenDelegate {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cpu_scanner)
+        abnb_cpu_fan.loop(false)
+        abnb_cpu_fan.setAnimation("2146-organize.json")
+        abnb_cpu_fan.playAnimation()
+
 
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
