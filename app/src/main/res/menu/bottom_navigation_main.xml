@@ -17,7 +17,7 @@
       android:id="@+id/nav_delete"
       android:icon="@drawable/ic_nav_delete" />
 
-  <!--<item
-      android:id="@+id/bnv_main_profile"
-      android:icon="@drawable/ic_nav_delete" />-->
+  <item
+      android:id="@+id/nav_rem"
+      android:icon="@drawable/bnv_gift" />
 </menu>
