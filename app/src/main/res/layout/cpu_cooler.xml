@@ -63,7 +63,6 @@
       android:paddingTop="16dp"
       android:text="@string/cool_down"
       android:textAllCaps="true"
-      android:textSize="18sp"
       app:layout_constraintEnd_toEndOf="@+id/batterytemp"
       app:layout_constraintStart_toStartOf="@+id/batterytemp"
       app:layout_constraintTop_toBottomOf="@+id/batterytemp"

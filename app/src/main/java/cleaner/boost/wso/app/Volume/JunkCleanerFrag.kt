@@ -43,6 +43,9 @@ class JunkCleanerFrag : Fragment() {
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
+    abnb_alert_ripple.setAnimation("alert_ripple.json")
+    abnb_alert_ripple.loop(true)
+    abnb_alert_ripple.playAnimation()
     Alarm_Junk.getNeedToCheck()
         .observe(this, Observer {
           if (it) {
@@ -119,7 +122,8 @@ class JunkCleanerFrag : Fragment() {
 
   private fun checkText() {
     if (PreferencesProvider.getInstance().getString("junk", "1") == "1") {
-      mainbrush.setImageResource(R.drawable.junk_red)
+
+//////////////////////////////
       mainbutton.setText(R.string.clean)
       cache.setText(R.string.cache_memory)
       temp.setText(R.string.temporary_files)
