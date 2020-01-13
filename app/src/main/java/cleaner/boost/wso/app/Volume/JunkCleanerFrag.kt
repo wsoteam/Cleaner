@@ -43,7 +43,7 @@ class JunkCleanerFrag : Fragment() {
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
-    abnb_alert_ripple.setAnimation("alert_ripple.json")
+    abnb_alert_ripple.setAnimation("good_ripple.json")
     abnb_alert_ripple.loop(true)
     abnb_alert_ripple.playAnimation()
     Alarm_Junk.getNeedToCheck()
@@ -123,7 +123,10 @@ class JunkCleanerFrag : Fragment() {
   private fun checkText() {
     if (PreferencesProvider.getInstance().getString("junk", "1") == "1") {
 
-//////////////////////////////
+
+      abnb_alert_ripple.setAnimation("alert_ripple.json")
+      abnb_alert_ripple.loop(true)
+      abnb_alert_ripple.playAnimation()
       mainbutton.setText(R.string.clean)
       cache.setText(R.string.cache_memory)
       temp.setText(R.string.temporary_files)
@@ -160,7 +163,6 @@ class JunkCleanerFrag : Fragment() {
       systemtext.setTextColor(Color.parseColor("#F22938"))
 
     } else {
-      mainbrush.setImageResource(R.drawable.junk_blue)
       mainbutton.setText(R.string.cleaned)
       cache.setText(R.string.cache_memory) //2
       temp.setText(R.string.temporary_files)

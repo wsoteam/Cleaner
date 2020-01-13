@@ -134,13 +134,12 @@
         android:id="@+id/cachetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="0 MB"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/cache"
         app:layout_constraintStart_toStartOf="@+id/cache"
-        app:layout_constraintTop_toBottomOf="@+id/cache"
+        app:layout_constraintTop_toTopOf="@+id/temptext"
         />
 
     <TextView
@@ -159,13 +158,12 @@
         android:id="@+id/residuetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="0 MB"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/residue"
         app:layout_constraintStart_toStartOf="@+id/residue"
-        app:layout_constraintTop_toBottomOf="@+id/residue"
+        app:layout_constraintTop_toTopOf="@+id/temptext"
         />
 
     <TextView
