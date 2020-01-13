@@ -37,11 +37,16 @@ class NoAdsFrag : AppCompatActivity() {
         private val canClick = MutableLiveData<Boolean>()
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View? {
-            return inflater.inflate(R.layout.fragment_buy_consume, container, false)
+            var view = inflater.inflate(R.layout.fragment_buy_consume, container, false)
+            return view
         }
+
+
 
         override fun onActivityCreated(savedInstanceState: Bundle?) {
             super.onActivityCreated(savedInstanceState)
+            abnb_no_ad.setAnimation("12937-gift-box.json")
+            abnb_no_ad.loop(false)
             canClick.observe(this, Observer {
                 buy_consume.isEnabled = it
             })
@@ -61,17 +66,14 @@ class NoAdsFrag : AppCompatActivity() {
 
         override fun setUserVisibleHint(isVisibleToUser: Boolean) {
             super.setUserVisibleHint(isVisibleToUser)
-
-
             if (isVisibleToUser) {
+                abnb_no_ad.playAnimation()
                 MainActivity.setInfo(R.string.remove_ads)
             } else {
-
             }
         }
 
         companion object {
-
             private val AD_FREE = "noads"
         }
     }
