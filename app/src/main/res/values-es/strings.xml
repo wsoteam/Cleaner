@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="app_name">Magic Cleaner: Potencia y limpia</string>
+
 <string name="remove_ads">Quitar publicidades</string>
 <string name="extended_battery_up_to">Extender batería hasta</string>
 <string name="battery_remaining">Batería restante</string>

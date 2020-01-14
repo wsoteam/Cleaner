@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="app_name">المنظف السحري - تعزيز وتنظيف</string>
+
 <string name="remove_ads">إزالة الإعلانات</string>
 <string name="extended_battery_up_to">تمديد البطارية حتى</string>
 <string name="battery_remaining">المتبقي من البطارية</string>

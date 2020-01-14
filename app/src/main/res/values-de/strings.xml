@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">„Magic Cleaner“ – Beschleunigen und Aufräumen</string>
+
 <string name="remove_ads">Anzeigen entfernen</string>
 <string name="extended_battery_up_to">Erweitert die Akkulaufzeit um bis zu</string>
 <string name="battery_remaining">Verbleibende Akkulaufzeit</string>

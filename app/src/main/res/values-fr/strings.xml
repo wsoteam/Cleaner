@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Magic Cleaner - Boost &amp; Clean</string>
 <string name="remove_ads">Supprime les publicités</string>
 <string name="extended_battery_up_to">Batterie prolongée jusqu’à</string>
 <string name="battery_remaining">Batterie restante</string>

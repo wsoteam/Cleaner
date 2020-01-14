@@ -3,6 +3,7 @@ package cleaner.booster.wso.app
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import com.android.billingclient.api.*
 
 object SubscriptionProvider : PurchasesUpdatedListener, BillingClientStateListener {
@@ -10,7 +11,7 @@ object SubscriptionProvider : PurchasesUpdatedListener, BillingClientStateListen
     lateinit private var playStoreBillingClient: BillingClient
     private lateinit var preferences: SharedPreferences
 
-    private const val SUBSCRIPTION_ID = "noads"
+    private const val SUBSCRIPTION_ID = "sub_year "
     private const val HAS_SUBSCRIPTION = "has_subscription"
     private const val IS_APPROVED = "is_approved"
 

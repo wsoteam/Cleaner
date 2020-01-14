@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="app_name">Magic Cleaner - Turbina e Limpa</string>
+
 <string name="remove_ads">Remover anúncios</string>
 <string name="extended_battery_up_to">Bateria estendida até</string>
 <string name="battery_remaining">Bateria restante</string>
