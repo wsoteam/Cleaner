@@ -69,11 +69,6 @@ class MainActivity : AppCompatActivity(), Preference.OnPreferenceClickListener {
     if (!SubscriptionProvider.hasSubscription()) {
       adView!!.loadAd(adRequest)
     }
-
-    // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-
-    ////                         Notification                                              /////
-    ////////////////////////////////////////////////////////////////////////////////////////////
     //PopUpAds.ShowInterstitialAds(getApplicationContext());
     consent = intent.getBooleanExtra(CONSENT, false)
 

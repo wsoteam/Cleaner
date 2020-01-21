@@ -99,7 +99,7 @@ class SplashActivity : AppCompatActivity(), AdMobFullscreenManager.AdMobFullscre
 
     override fun ADLoaded() {
         if (adManager!!.tryingShowDone) {
-            adManager!!.showAdd()
+            //adManager!!.showAdd()
         }
     }
 
