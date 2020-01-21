@@ -130,7 +130,8 @@ class MainActivity : AppCompatActivity(), Preference.OnPreferenceClickListener {
 
 
     Log.i("adsShow", adsShow.toString())
-    if (!SubscriptionProvider.hasSubscription()) {
+    if (SubscriptionProvider.hasSubscription()) {
+      tab_layout.menu.removeItem(R.id.nav_rem)
       //tab_layout.addTab(tab_layout.newTab().setIcon(R.drawable.ads))
     }
     val adapter = MyPagerAdapter(supportFragmentManager, tab_layout.maxItemCount)
