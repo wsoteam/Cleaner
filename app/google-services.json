@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "419777767069-k4f82hgr83068aals5gqmt86didopf5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cleaner.booster.wso.app",
+            "certificate_hash": "cd8b81d6ba6a9313309c241a7b8d164f33ba12ae"
+          }
+        },
+        {
           "client_id": "419777767069-p7pfbpjtlh0pvh8qq5nnomrmhjgqmvpu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -41,7 +49,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-3050564412171997~4260778012"
     }
   ],
   "configuration_version": "1"
