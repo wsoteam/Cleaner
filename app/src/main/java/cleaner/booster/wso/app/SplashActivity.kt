@@ -72,12 +72,15 @@ class SplashActivity : AppCompatActivity(), AdMobFullscreenManager.AdMobFullscre
             mFirebaseAnalytics!!.setUserProperty("traffic_id", MobPirate.getInstance().clientId)
             val bundle = Bundle()
             bundle.putString(FirebaseAnalytics.Param.CAMPAIGN, MobPirate.getInstance().clientId)
+            bundle.putString(FirebaseAnalytics.Param.MEDIUM, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.SOURCE, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.ACLID, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.CONTENT, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.CP1, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.VALUE, MobPirate.getInstance().clientId)
             mFirebaseAnalytics!!.logEvent("traffic_id", bundle)
+            mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.APP_OPEN, bundle)
+            mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.CAMPAIGN_DETAILS, bundle)
         }
     }
 
