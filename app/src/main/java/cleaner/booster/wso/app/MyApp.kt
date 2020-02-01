@@ -31,7 +31,7 @@ class MyApp : ModuleApplication() {
         MobPirate.getInstance().init(this, getString(R.string.facebook_app_id))
         val mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        MobileAds.initialize(this, "ca-app-pub-9186818878966298~1453782708") //ca-app-pub-9387354664905418~6073119457
+        MobileAds.initialize(this, "ca-app-pub-9387354664905418~9431101803") //ca-app-pub-9387354664905418~6073119457
         // Создание расширенной конфигурации библиотеки.
         val config = YandexMetricaConfig.newConfigBuilder("2e345e4f-9c28-471c-90b2-fffc70a053c8").build()
         // Инициализация AppMetrica SDK.
