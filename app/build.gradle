@@ -6,11 +6,11 @@ apply plugin: 'com.google.gms.google-services'
 android {
   compileSdkVersion 29
   defaultConfig {
-    applicationId "cleaner.booster.wso.apps"
+    applicationId "cleaner.booster.wso.app"
     minSdkVersion 21
     targetSdkVersion 29
-    versionCode 12
-    versionName "1.1.1"
+    versionCode 13
+    versionName "1.1.2"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
   buildTypes {

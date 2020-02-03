@@ -35,43 +35,6 @@
         }
       },
       "admob_app_id": "ca-app-pub-9387354664905418~9431101803"
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:335133280926:android:1baf06ae2571680159898f",
-        "android_client_info": {
-          "package_name": "cleaner.booster.wso.apps"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "335133280926-c2eucmr6h5fv3llfmgnad0a110dia30v.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "cleaner.booster.wso.apps",
-            "certificate_hash": "9a3df1a74b48c4ee8e31bddbb54686213c5f241d"
-          }
-        },
-        {
-          "client_id": "335133280926-k1r2p9sokr04ebaogikrj100e1gum7rn.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC8aBvJ--77PIhngJ_IimxRQqsnMroPn4I"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "335133280926-k1r2p9sokr04ebaogikrj100e1gum7rn.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"
