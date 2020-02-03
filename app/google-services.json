@@ -8,36 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:335133280926:android:74f4c0c8db3888c6",
-        "android_client_info": {
-          "package_name": "app.crystal.cleaner.boost"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "335133280926-k1r2p9sokr04ebaogikrj100e1gum7rn.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC8aBvJ--77PIhngJ_IimxRQqsnMroPn4I"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "335133280926-k1r2p9sokr04ebaogikrj100e1gum7rn.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      },
-      "admob_app_id": "ca-app-pub-9387354664905418~9985121291"
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:335133280926:android:f655acdd1f41f2c559898f",
         "android_client_info": {
           "package_name": "cleaner.booster.wso.app"
