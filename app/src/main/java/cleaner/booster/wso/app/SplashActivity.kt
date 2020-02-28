@@ -1,5 +1,6 @@
 package cleaner.booster.wso.app
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,25 +11,37 @@ import androidx.lifecycle.Observer
 import com.google.firebase.analytics.FirebaseAnalytics
 import ru.mail.aslanisl.mobpirate.MobPirate
 import cleaner.booster.wso.app.Constants.adsShow
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.tasks.Task
 import java.util.concurrent.TimeUnit
 
-class SplashActivity : AppCompatActivity(), AdMobFullscreenManager.AdMobFullscreenDelegate {
-    internal var fullscreenManager: AdMobFullscreenManager? = null
+class SplashActivity : AppCompatActivity() {
     private var privatePoliceBtn: Button? = null
     internal var privacyPoliceClicked = false
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
+    private lateinit var mInterstitialAd: InterstitialAd
 
-    private val adManager: AdMobFullscreenManager?
-        get() {
-            if (fullscreenManager == null) {
-                configureManager()
+    val canGoNext = MutableLiveData<Int>()
+
+    var counter: Int = 0
+    var max = 0
+
+    init {
+        canGoNext.observe(this, Observer {
+            counter += it
+            if (counter > max) {
+                goNext()
             }
-            return fullscreenManager
-        }
+
+        })
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.flash_screen)
+        handlAd("kek")
         signInAndInitUser(intent)
         privacyPoliceClicked = false
         privatePoliceBtn = findViewById(R.id.privacyPoliceBtn)
@@ -39,30 +52,56 @@ class SplashActivity : AppCompatActivity(), AdMobFullscreenManager.AdMobFullscre
             privacyPoliceClicked = true
             startActivity(Intent(this@SplashActivity, PrivacyPoliceActivity::class.java))
         }
+    }
 
-        Log.i("CheckAdsBill", "onCreate")
 
-        val canGoNext = MutableLiveData<Boolean>()
-        canGoNext.observe(this, Observer {
-            if(it){
-                goNext()
+    private fun handlOnboard(responseString: String?) {
+        Log.e("LOL", responseString)
+    }
+
+    private fun loadAd() {
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = resources.getString(R.string.interstitial)
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        mInterstitialAd.adListener = object : AdListener() {
+
+            override fun onAdFailedToLoad(p0: Int) {
+                canGoNext.postValue(1)
+                super.onAdFailedToLoad(p0)
             }
-        })
 
-        Thread{
+            override fun onAdClosed() {
+                canGoNext.postValue(1)
+                super.onAdClosed()
+            }
+
+            override fun onAdLoaded() {
+                super.onAdLoaded()
+                mInterstitialAd.show()
+            }
+        }
+    }
+
+
+
+    private fun handlAd(interState: String?) {
+        if (!SubscriptionProvider.hasSubscription()) {
+            loadAd()
+        } else {
+        Thread {
             TimeUnit.SECONDS.sleep(2)
-            canGoNext.postValue(true)
+            canGoNext.postValue(1)
         }.start()
+        }
     }
 
-    private fun startMainActivityWithDefaultConsent() {
-        startActivity(MainActivity.getIntent(this, true))
-    }
+
 
     private fun signInAndInitUser(intent: Intent) {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        MobPirate.getInstance().getTargetUrl(this, intent)
+        MobPirate.getInstance()
+            .getTargetUrl(this, intent)
         setPirateUser()
     }
 
@@ -72,87 +111,50 @@ class SplashActivity : AppCompatActivity(), AdMobFullscreenManager.AdMobFullscre
             mFirebaseAnalytics!!.setUserProperty("traffic_id", MobPirate.getInstance().clientId)
             val bundle = Bundle()
             bundle.putString(FirebaseAnalytics.Param.CAMPAIGN, MobPirate.getInstance().clientId)
+            bundle.putString(FirebaseAnalytics.Param.MEDIUM, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.SOURCE, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.ACLID, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.CONTENT, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.CP1, MobPirate.getInstance().clientId)
             bundle.putString(FirebaseAnalytics.Param.VALUE, MobPirate.getInstance().clientId)
             mFirebaseAnalytics!!.logEvent("traffic_id", bundle)
+            mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.APP_OPEN, bundle)
+            mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.CAMPAIGN_DETAILS, bundle)
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-    }
+    override fun onBackPressed() {
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    private fun configureManager() {
-        if (fullscreenManager == null) {
-            fullscreenManager = AdMobFullscreenManager(this, this)
-        } else {
-            fullscreenManager!!.reloadAd()
-        }
-    }
-
-    override fun ADLoaded() {
-        if (adManager!!.tryingShowDone) {
-            //adManager!!.showAdd()
-        }
-    }
-
-    override fun ADIsClosed() {
-        if (adManager!!.tryingShowDone) {
-            goNext()
-        }
     }
 
     override fun onResume() {
         privacyPoliceClicked = false
-        adManager!!.completed()
         super.onResume()
-        //getAdManager().completed();
     }
 
-    fun srtatApp() {
-        Log.i("CheckAdsBill", adsShow.toString())
-
-        //PopUpAds.ShowInterstitialAds(getApplicationContext());
-        // ConsentInformation consentInformation = ConsentInformation.getInstance(this);
-
-        /*String[] publisherIds = {"pub-0123456789012345"};
-        consentInformation.requestConsentInfoUpdate(publisherIds, new ConsentInfoUpdateListener() {
-            @Override
-            public void onConsentInfoUpdated(ConsentStatus consentStatus) {
-                if (ConsentInformation.getInstance(SplashActivity.this).isRequestLocationInEeaOrUnknown()) {
-                    //startActivity(new Intent(SplashActivity.this, GDPRActivity.class));
-                } else {
-                    startActivity(new Intent(SplashActivity.this, GDPRActivity.class));
-                }
-            }
-
-            @Override
-            public void onFailedToUpdateConsentInfo(String errorDescription) {
-                startActivity(new Intent(SplashActivity.this, GDPRActivity.class));
-            }
-        });
-        */
-
-
-        goNext()
-    }
-
-    internal fun goNext() {
+    private fun goNext() {
         if (!privacyPoliceClicked) {
-            val i = Intent(applicationContext, MainActivity::class.java)
-            startActivity(i)
-            finish()
+            moveABTest()
         }
     }
 
-    companion object {
-        private val AD_FREE = "noads"
+    private fun moveABTest() {
+        /* if (isFirstLaunch()) {
+             val version =
+                     getSharedPreferences(ABConfig.KEY_FOR_SAVE_STATE, Context.MODE_PRIVATE).getString(ABConfig.KEY_FOR_SAVE_STATE, "")
+             var intent = Intent()
+             when (version) {
+                 ABConfig.DEFAULT, ABConfig.A, ABConfig.B, ABConfig.C, ABConfig.D, ABConfig.E ->
+                     intent = Intent(this, RocketAct::class.java)
+                 ABConfig.F, ABConfig.G -> intent =
+                         Intent(this, PremiumHostAct::class.java).putExtra(Config.PREM_FROM, Config.PREM_FROM_ONBOARD)
+             }
+             startActivity(intent)
+             finish()
+         } else {*/
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+        //}
     }
+
 }
